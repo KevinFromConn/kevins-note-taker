@@ -9,5 +9,6 @@
     "title": "This is another new note!",
     "text": "This is even more note text!",
     "id": "2"
-  }
+  },
+  { "title": "TEST", "text": "TEST", "id": "3" }
 ]
