@@ -30,3 +30,18 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
+app.post("/api/notes", (req, res) => {
+    let savedNotes = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"));
+    let newNote = req.body;
+    let uniqueID = (savedNotes.length).toString();
+    newNote.id = uniqueID;
+    savedNotes.push(newNote);
+    fs.writeFileSync("./db/db.json", JSON.stringify(savedNotes));
+    res.json(newNote);
+});
+
+// ADD DELETE FUNCTIONALITY IF ABLE
+
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
+});
