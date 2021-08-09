@@ -42,22 +42,6 @@ app.post("/api/notes", (req, res) => {
 });
 
 // ADD DELETE FUNCTIONALITY IF ABLE
-app.delete("/api/notes:id", (req, res) => {
-  let savedNotes = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"));
-  let noteID = req.params.id;
-  let newID = 0;
-  savedNotes = savedNotes.filter((currentNote) => {
-    return currentNote.id != noteID;
-  });
-
-  for (currentNote of savedNotes) {
-    currentNote.id = newID.toString();
-    newID++;
-  }
-
-  fs.writeFileSync("./db/db.json", JSON.stringify(savedNotes));
-  res.json(savedNotes);
-});
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
