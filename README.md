@@ -1,6 +1,6 @@
 # Note Taker
 
-This application allows users to write notes and save them directly within the application. The user can also delete notes after they are written.
+This application allows users to write notes and save them directly within the application. Future plans for this application include allowing users to delete notes they no longer need (my attempts to get the delete request working were unsuccessful).
 
 # Screenshot of Application (Animated)
 
